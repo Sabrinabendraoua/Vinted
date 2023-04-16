@@ -27,6 +27,10 @@ app.use(user);
 app.use(offer);
 app.use(filter);
 
+app.get("/", (req, res) => {
+  res.json("Bonjour vous êtes bien sur mon projet");
+});
+
 app.all("*", (req, res) => {
   res.status(404).json({ message: "This route does not exist" });
 });
